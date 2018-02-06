@@ -38,7 +38,7 @@ function createCatContainers(data) {
     fetch(link).then(result => result.json()).then(data => show(data));
 }
 
-        //another problem :(
+//another problem :(
 
 function filter(myFilter) {
     console.log(document.querySelectorAll("#MENU section"));

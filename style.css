@@ -31,7 +31,7 @@ label {
     color: #FFFFFF;
     cursor: pointer;
     display: block;
-    font-size: 38px;
+    font-size: 26px;
     padding: 7px 9px;
     transition: all .15s ease;
 }
@@ -384,7 +384,7 @@ footer {
     color:  #FFFFFF;
      border-top: 1px  solid;
     border-bottom: 1px solid;
-     padding: .2em .5em;
+     padding: .2em .4em;
 
 }
 
@@ -413,7 +413,7 @@ footer {
         color: #FFFFFF;
         cursor: pointer;
         display: block;
-        font-size: 44px;
+        font-size: 32px;
         padding: 7px 9px;
         transition: all .15s ease;
     }
