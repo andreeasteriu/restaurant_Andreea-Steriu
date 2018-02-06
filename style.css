@@ -374,18 +374,17 @@ footer {
     text-align: center;
     background-color: #000000;
     padding-bottom: .5em;
-         text-transform:capitalize;
+    text-transform:capitalize;
 
     }
 
  #subnav a {
-     display: grid;
     text-decoration:none;
-    font-size:20px;
+    font-size:18px;
     color:  #FFFFFF;
      border-top: 1px  solid;
     border-bottom: 1px solid;
-     padding: .2em 1em;
+     padding: .2em .5em;
 
 }
 
