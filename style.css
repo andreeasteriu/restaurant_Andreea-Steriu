@@ -1,0 +1,625 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    align-items: center;
+    background-color: #434e48;
+    color: #FFFFFF;
+    font-family: 'Work Sans', sans-serif;
+
+}
+
+.hide {
+    display: none;
+}
+
+
+
+section h2 {
+    grid-column: 1/-1;
+}
+
+
+input {
+    display: none;
+}
+
+label {
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-size: 38px;
+    padding: 7px 9px;
+    transition: all .15s ease;
+}
+
+label:hover {
+    color: #ff7b29;
+}
+
+input:checked + label {
+    color: #ff7b29;
+}
+
+#mainnav {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all .15s ease;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 21px;
+    outline-color: #FFFFFF;
+}
+
+
+input:checked ~ #mainnav {
+    max-height: 500px;
+}
+
+ul {
+    list-style: none;
+    margin: 8px 0 0 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+li {
+    border-bottom: 2px solid;
+}
+
+#mainnav a {
+    color: #FFFFFF;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+
+/*header*/
+
+header {
+    display: block;
+    background-image: url(assets/display2.png);
+    background-size: cover;
+    height: 14.4em;
+    background-repeat: no-repeat;
+    background-position: top;
+
+}
+
+
+
+
+
+h1 {
+    font-size: 50px;
+    font-family: Eczar, sans-serif;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: black;
+}
+
+h2 {
+    font-family: Eczar, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    background-color: grey;
+    text-transform: uppercase;
+
+}
+
+h3 {
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+h4 {
+    color: red;
+    font-size: 20px;
+    border: 1px solid;
+    padding: 7px 10px;
+    border-radius: 20px;
+
+}
+
+
+/*body*/
+
+.price {
+    font-size: 30px;
+    text-align: right;
+    margin-bottom: 0;
+    margin-top: 2em;
+
+}
+
+.old-price {
+    text-decoration: line-through;
+    font-size: 18px;
+    text-align: right;
+    margin-bottom: 0;
+    margin-top: 3em;
+}
+
+.discount {
+    font-size: 30px;
+    color: greenyellow;
+    text-align: right;
+    margin: 0;
+
+}
+
+
+
+.vegetarian {
+    margin: 0;
+}
+
+.list_item {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1em;
+    padding-bottom: 2em;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.pictures {
+    display: block;
+    margin: auto;
+    width: 100%;
+    border: solid;
+    border-style: dashed;
+    border-radius: 2em;
+
+}
+
+.sold_out {
+    position: absolute;
+    top: 15px;
+
+}
+
+.img_soldout {
+    display: block;
+    width: 130px;
+
+}
+
+/*loader*/
+
+.loader {
+    border: 20px solid rgba(0, 0, 0, 0.2);
+    ;
+    border-radius: 50%;
+    border-top: 20px solid #7da149;
+    animation: spin 1s linear forwards;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -75px 0 0 -75px;
+
+
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+
+}
+
+.hide-me {
+    opacity: 0;
+    animation: fade 1s 1s forwards;
+}
+
+@keyframes fade {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Button Content */
+
+.btn {
+    background: #7da149;
+    background-image: linear-gradient(to bottom, #7da149, #2a3308);
+    border: none;
+    border-radius: 20px;
+    font-family: Eczar;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 1px 20px;
+    float: right;
+}
+
+
+
+.btn:hover {
+    background: #5cb85c;
+    background-image: linear-gradient(to bottom, #5cb85c, #235223);
+
+}
+
+
+
+
+/* Modal Content */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black w/ opacity */
+}
+
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: .5em;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+
+.close {
+    color: white;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal_text {
+    color: black;
+    font-size: 18px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-title {
+    background: none;
+}
+
+.modal-pictures {
+    display: block;
+    margin: auto;
+    width: 100%;
+    border: 5px solid;
+    border-color: orangered;
+    border-style: dashed;
+    border-radius: 2em;
+    margin-top: 11px;
+
+}
+
+/*footer*/
+
+footer {
+    background: rgb(125,126,125); ;
+    background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%);
+    height: 100px;
+    position:relative;
+    bottom: 0;
+}
+
+     /*****SUBNAV HERE******/
+
+    #subnav {
+    text-align: center;
+    background-color: #000000;
+    padding-bottom: .5em;
+         text-transform:capitalize;
+
+    }
+
+ #subnav a {
+     display: grid;
+    text-decoration:none;
+    font-size:20px;
+    color:  #FFFFFF;
+     border-top: 1px  solid;
+    border-bottom: 1px solid;
+     padding: .2em 1em;
+
+}
+
+#subnav a:hover,
+#subnav a:focus {
+    background-color: green;
+    cursor: pointer;
+}
+
+/*tablet*/
+
+@media only screen and (min-width: 30em) {
+
+
+
+
+    header {
+        height: 66vh;
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        color: #FFFFFF;
+        cursor: pointer;
+        display: block;
+        font-size: 44px;
+        padding: 7px 9px;
+        transition: all .15s ease;
+    }
+
+    label:hover {
+        color: #ff7b29;
+    }
+
+    input:checked + label {
+        color: #ff7b29;
+    }
+
+    #mainnav {
+        max-height: 0px;
+        overflow: hidden;
+        transition: all .15s ease;
+        color: #FFFFFF;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 21px;
+        outline-color: black;
+    }
+
+    input:checked ~ #mainnav {
+        max-height: 500px;
+    }
+
+    ul {
+        list-style: none;
+        margin: 8px 0 0 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #7da149;
+        overflow: hidden;
+    }
+
+    li {
+        border-bottom: 2px solid;
+    }
+
+    #mainnav a {
+        color: #FFFFFF;
+        display: block;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    article {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    /******* GRID *******/
+
+    .product {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+        grid-template-rows: 6em;
+        grid-column-gap: .5em;
+        grid-auto-rows: 30em;
+
+    }
+
+    .modal-content {
+        width: 75%;
+
+    }
+
+    header {
+        height: 30.4em;
+    }
+
+    .price {
+        position: absolute;
+        bottom: .8em;
+        right: 10px;
+    }
+
+    .old-price {
+        font-size: 15px;
+        position: absolute;
+        bottom: 3.5em;
+        right: 10px;
+
+    }
+
+    .discount {
+        position: absolute;
+        bottom: .8em;
+        right: 10px;
+    }
+    .btn {
+        float: none;
+        position: absolute;
+        right: 10px;
+        bottom: 4em;
+
+    }
+
+
+
+}
+
+
+
+/*desktop*/
+
+@media only screen and (min-width:60em) {
+
+    section {
+        background-image: url(assets/bg3.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        position: relative;
+    }
+
+    label {
+        display: none;
+    }
+
+    #mainnav {
+        max-height: 4em;
+
+    }
+
+    #mainnav ul {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 10px;
+        width: 100%;
+        margin: 0px;
+        padding-left: 30px;
+        position: fixed;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #mainnav li {
+        border-bottom: none;
+        padding-top: 30px;
+        font-size: 16px;
+    }
+
+    #mainnav a {
+
+        border-left: 1px solid;
+        padding: 7px 10px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+
+
+    }
+    #mainnav a:hover {
+        border: #FFFFFF 1px solid;
+        padding: 7px 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: none;
+
+    }
+
+    header {
+        height: 45em;
+
+    }
+
+    h1 {
+        font-size: 80px;
+        margin: 0;
+        padding: 1em 0 0 0;
+        text-align: center;
+        background: none;
+    }
+
+    h2 {
+        background: none;
+        font-size: 30px;
+    }
+
+
+    .product {
+        padding: 0 9vw;
+    }
+    .modal-content {
+        width: 50%;
+
+    }
+
+
+    .modal_text {
+        font-size: 21px;
+        text-align: center;
+        margin: 1.5em;
+    }
+    .modal-header {
+        text-align: center;
+    }
+
+    .modal-title {
+        font-size: 40pX;
+        margin: 10px;
+    }
+
+    .modal-pictures {
+        width: 80%;
+    }
+}

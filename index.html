@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BISTRO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+
+</head>
+
+<body>
+     <div class="loader"></div>
+    <main class="hide-me">
+        <label for="toggle">&#9776;</label>
+        <input type="checkbox" id="toggle">
+        <nav id="mainnav">
+            <ul>
+                <li><a href="#MENU"><b>MENU</b></a></li>
+                <li><a href="#"><b>ABOUT</b></a></li>
+                <li><a href="#"><b>CONTACT</b></a></li>
+            </ul>
+        </nav>
+        <header>
+
+        </header>
+
+
+
+        <section id="MENU">
+           <h1>MENU</h1>
+             <nav id="subnav"></nav>
+
+            <article>
+               <template id="productTemplate">
+                <div class="list_item">
+                    <img class="pictures" src="assets/small/russisktapas-sm.jpg"/>
+                     <div class="sold_out">
+                        <img class="img_soldout" src="assets/soldout.png" />
+                    </div>
+
+                    <h3>
+                        Russian Ringbread
+                    </h3>
+                    <i>(Russisk ringbrød af Karapatisk mel)</i>
+                    <p class="vegetarian">VEGETARIAN: <span class="no">NO</span></p>
+
+                    <button class="btn">Details</button>
+
+                    <p class="price">PRICE: <span class="price-nr">29</span>,-</p>
+                    <p class="discount">NOW: <span>20</span>,-</p>
+
+                </div>
+               </template>
+            </article>
+
+            <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h2 class="modal-title">Russian Ringbread</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img class="modal-pictures" src="assets/medium/russisktapas-md.jpg" />
+                            <p class="modal_text">Russisk ringbrød efter en klassisk opskrift fra Karapatien. Dejen blandes koldhæver 30 dage, inde brødet bages over bål. Meget sprødt, godt med Karapatisk bjerggedsmør.</p>
+
+                        </div>
+                        <div class="modal-footer">
+                            <h2 class="modal-title">PRICE: 29,-</h2>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+        </section>
+    </main>
+    <footer>
+
+
+    </footer>
+
+
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <!--<script src="modal.js"></script>-->
+    <script src="list.js"></script>
+
+    <script>
+        $(function() {
+            smoothScroll(1000);
+        });
+
+        // smoothScroll function is applied from the document ready function
+        function smoothScroll(duration) {
+            $('a[href^="#"]').on('click', function(event) {
+
+                var target = $($(this).attr('href'));
+
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, duration);
+                }
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>
